@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:musicen/components/colors.dart';
-import 'package:musicen/home_screen.dart';
+import 'package:musicen/screens/home_screen/home.screen.dart';
 
 void main() {
   runApp(const MyApp());
