@@ -22,11 +22,50 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/image_release.png
+  AssetGenImage get imageRelease =>
+      const AssetGenImage('assets/images/image_release.png');
+
+  /// File path: assets/images/image_release2.png
+  AssetGenImage get imageRelease2 =>
+      const AssetGenImage('assets/images/image_release2.png');
+
+  /// File path: assets/images/mix.png
+  AssetGenImage get mix => const AssetGenImage('assets/images/mix.png');
+
+  /// File path: assets/images/mix2.png
+  AssetGenImage get mix2 => const AssetGenImage('assets/images/mix2.png');
+
+  /// File path: assets/images/mix3.png
+  AssetGenImage get mix3 => const AssetGenImage('assets/images/mix3.png');
+
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
 
+  /// File path: assets/images/test_category.png
+  AssetGenImage get testCategory =>
+      const AssetGenImage('assets/images/test_category.png');
+
+  /// File path: assets/images/test_category2.png
+  AssetGenImage get testCategory2 =>
+      const AssetGenImage('assets/images/test_category2.png');
+
+  /// File path: assets/images/test_category3.png
+  AssetGenImage get testCategory3 =>
+      const AssetGenImage('assets/images/test_category3.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [profile];
+  List<AssetGenImage> get values => [
+        imageRelease,
+        imageRelease2,
+        mix,
+        mix2,
+        mix3,
+        profile,
+        testCategory,
+        testCategory2,
+        testCategory3
+      ];
 }
 
 class Assets {
