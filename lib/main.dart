@@ -19,27 +19,37 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         textTheme: TextTheme(
-            headlineLarge: TextStyle(
-              fontFamily: fontFamily,
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              color: TextThemeColor.mainTextColor,
-            ),
-            headlineMedium: TextStyle(
-                fontFamily: fontFamily,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
-            bodyMedium: TextStyle(
-                fontFamily: fontFamily,
-                fontSize: 18,
-                color: Colors.white,
-                fontWeight: FontWeight.normal),
-            bodySmall: TextStyle(
-                fontFamily: fontFamily,
-                fontSize: 14,
-                color: Colors.white70,
-                fontWeight: FontWeight.w300)),
+          headlineLarge: TextStyle(
+            fontFamily: fontFamily,
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+            color: TextThemeColor.mainTextColor,
+          ),
+          headlineMedium: TextStyle(
+            fontFamily: fontFamily,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+          bodyLarge: TextStyle(
+            fontFamily: fontFamily,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+          bodyMedium: TextStyle(
+            fontFamily: fontFamily,
+            fontSize: 18,
+            color: Colors.white,
+            fontWeight: FontWeight.normal,
+          ),
+          bodySmall: TextStyle(
+            fontFamily: fontFamily,
+            fontSize: 14,
+            color: Colors.white70,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
       ),
       home: const HomeScreen(),
     );
