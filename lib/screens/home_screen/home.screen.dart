@@ -31,9 +31,7 @@ class HomeScreen extends StatelessWidget {
                         focusColor: Colors.transparent,
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
-                        onTap: () {
-                          
-                        },
+                        onTap: () {},
                         child: Padding(
                           padding: EdgeInsets.only(
                               top: size.height / 25, right: size.width / 25),
@@ -226,6 +224,8 @@ class HomeScreen extends StatelessWidget {
                                   'El Dollop',
                                   style: textTheme.bodyMedium!
                                       .copyWith(fontWeight: FontWeight.bold),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                                 SizedBox(
                                   height: size.height / 200,
@@ -235,6 +235,7 @@ class HomeScreen extends StatelessWidget {
                                   style: textTheme.bodySmall!
                                       .apply(fontSizeFactor: 0.8),
                                   maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                 )
                               ],
                             ),
@@ -311,10 +312,14 @@ class HomeScreen extends StatelessWidget {
                                     Text(
                                       'Uncovered - Robin Schulz',
                                       style: textTheme.bodyMedium,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                     ),
                                     Text(
                                       '18 singles (2017)',
                                       style: textTheme.bodySmall,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                     )
                                   ],
                                 ),
@@ -376,6 +381,8 @@ class HomeScreen extends StatelessWidget {
                                   'El Dollop',
                                   style: textTheme.bodyMedium!
                                       .copyWith(fontWeight: FontWeight.bold),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                                 SizedBox(
                                   height: size.height / 200,
@@ -385,6 +392,7 @@ class HomeScreen extends StatelessWidget {
                                   style: textTheme.bodySmall!
                                       .apply(fontSizeFactor: 0.8),
                                   maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                 )
                               ],
                             ),
@@ -460,10 +468,14 @@ class HomeScreen extends StatelessWidget {
                                   Text(
                                     'Uncovered - Robin Schulz',
                                     style: textTheme.bodyMedium,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                   Text(
                                     '18 singles (2017)',
                                     style: textTheme.bodySmall,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   )
                                 ],
                               ),

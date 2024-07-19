@@ -116,10 +116,12 @@ class _PlayListState extends State<PlayList> {
                       children: [
                         SizedBox(
                           width: size.width / 1.5,
-                          child: Text('CASO.63',
-                              style: textTheme.bodyLarge,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis),
+                          child: Text(
+                            'CASO.63',
+                            style: textTheme.bodyLarge,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                         SizedBox(
                             child: Text(
@@ -236,12 +238,16 @@ class _PlayListState extends State<PlayList> {
                                           'LYRICS',
                                           style: textTheme.bodyMedium!
                                               .apply(fontSizeFactor: 0.8),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                     ),
                                     Text(
                                       'Category 1',
                                       style: textTheme.bodySmall,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                     )
                                   ],
                                 ),
