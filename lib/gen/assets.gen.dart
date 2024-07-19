@@ -12,15 +12,22 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/check_lyrics.svg
+  String get checkLyrics => 'assets/icons/check_lyrics.svg';
+
   /// File path: assets/icons/setting.svg
   String get setting => 'assets/icons/setting.svg';
 
   /// List of all assets
-  List<String> get values => [setting];
+  List<String> get values => [checkLyrics, setting];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/category_image_playlist.png
+  AssetGenImage get categoryImagePlaylist =>
+      const AssetGenImage('assets/images/category_image_playlist.png');
 
   /// File path: assets/images/image_release.png
   AssetGenImage get imageRelease =>
@@ -56,6 +63,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        categoryImagePlaylist,
         imageRelease,
         imageRelease2,
         mix,
