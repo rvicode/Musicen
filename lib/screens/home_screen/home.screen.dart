@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:musicen/components/colors.dart';
 import 'package:musicen/gen/assets.gen.dart';
+import 'package:musicen/screens/play_list/play.list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -73,32 +74,45 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(
-                          right: 5,
-                          left: index == 0 ? 15 : 5,
-                          top: 8,
-                          bottom: 5),
-                      child: Container(
-                        decoration: BoxDecoration(
+                        left: index == 0 ? 15 : 5,
+                        top: 8,
+                        right: 5,
+                        bottom: 5,
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PlayList(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
-                                image:
-                                    AssetImage(Assets.images.testCategory.path),
-                                fit: BoxFit.cover)),
-                        width: size.width / 3.4,
-                        child: Container(
-                          width: double.infinity,
-                          height: double.infinity,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                                colors: [
-                                  Color.fromARGB(150, 18, 18, 18),
-                                  Color.fromARGB(200, 18, 18, 18)
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter),
+                              image:
+                                  AssetImage(Assets.images.testCategory.path),
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                          child: Center(
-                            child: Text('Rap', style: textTheme.bodyMedium),
+                          width: size.width / 3.4,
+                          child: Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [
+                                    Color.fromARGB(150, 18, 18, 18),
+                                    Color.fromARGB(200, 18, 18, 18)
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter),
+                            ),
+                            child: Center(
+                              child: Text('Rap', style: textTheme.bodyMedium),
+                            ),
                           ),
                         ),
                       ),
@@ -116,32 +130,41 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(
-                          right: 5,
-                          left: index == 0 ? 15 : 5,
-                          top: 8,
-                          bottom: 5),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                                image:
-                                    AssetImage(Assets.images.testCategory.path),
-                                fit: BoxFit.cover)),
-                        width: size.width / 3.4,
+                        left: index == 0 ? 15 : 5,
+                        top: 8,
+                        right: 5,
+                        bottom: 5,
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const PlayList()));
+                        },
                         child: Container(
-                          width: double.infinity,
-                          height: double.infinity,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                                colors: [
-                                  Color.fromARGB(150, 18, 18, 18),
-                                  Color.fromARGB(200, 18, 18, 18)
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter),
-                          ),
-                          child: Center(
-                            child: Text('Rap', style: textTheme.bodyMedium),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      Assets.images.testCategory.path),
+                                  fit: BoxFit.cover)),
+                          width: size.width / 3.4,
+                          child: Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [
+                                    Color.fromARGB(150, 18, 18, 18),
+                                    Color.fromARGB(200, 18, 18, 18)
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter),
+                            ),
+                            child: Center(
+                              child: Text('Rap', style: textTheme.bodyMedium),
+                            ),
                           ),
                         ),
                       ),
@@ -152,8 +175,11 @@ class HomeScreen extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsets.only(left: 24, bottom: 18, top: 10),
+                    padding: EdgeInsets.only(
+                      left: size.width / 20,
+                      bottom: 18,
+                      top: 10,
+                    ),
                     child: Text(
                       'New Release',
                       style: textTheme.headlineMedium,
@@ -170,7 +196,7 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(
-                          left: index == 0 ? 24 : 10, right: 10),
+                          left: index == 0 ? size.width / 20 : 10, right: 10),
                       child: Column(
                         children: [
                           Padding(
@@ -219,10 +245,10 @@ class HomeScreen extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsets.only(left: 24, bottom: 10, top: 10),
+                    padding: EdgeInsets.only(
+                        left: size.width / 20, bottom: 10, top: 10),
                     child: Text(
-                      'New albums',
+                      'New Play Lists',
                       style: textTheme.headlineMedium,
                     ),
                   ),
@@ -237,50 +263,60 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(
-                        right: index == (index.bitLength - 2) ? 24 : 5,
-                        left: index == 0 ? 24 : 10,
+                        left: index == 0 ? size.width / 20 : 10,
                         top: 8,
+                        right: 5,
                         bottom: 5,
                       ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: AssetImage(Assets.images.imageRelease.path),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        width: size.width / 1.5,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const PlayList()));
+                        },
                         child: Container(
-                            width: double.infinity,
-                            height: double.infinity,
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image:
+                                  AssetImage(Assets.images.imageRelease.path),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          width: size.width / 1.5,
+                          child: Container(
+                              width: double.infinity,
+                              height: double.infinity,
+                              decoration: const BoxDecoration(
+                                gradient: LinearGradient(
                                   colors: [
                                     Color.fromARGB(0, 0, 0, 0),
-                                    Color.fromARGB(200, 12, 12, 12)
+                                    Color.fromARGB(200, 12, 12, 12),
                                   ],
                                   begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter),
-                            ),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 20, bottom: 10),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Uncovered - Robin Schulz',
-                                    style: textTheme.bodyMedium,
-                                  ),
-                                  Text(
-                                    '18 singles (2017)',
-                                    style: textTheme.bodySmall,
-                                  )
-                                ],
+                                  end: Alignment.bottomCenter,
+                                ),
                               ),
-                            )),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 20, bottom: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Uncovered - Robin Schulz',
+                                      style: textTheme.bodyMedium,
+                                    ),
+                                    Text(
+                                      '18 singles (2017)',
+                                      style: textTheme.bodySmall,
+                                    )
+                                  ],
+                                ),
+                              )),
+                        ),
                       ),
                     );
                   },
@@ -292,8 +328,8 @@ class HomeScreen extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsets.only(left: 24, bottom: 18, top: 10),
+                    padding: EdgeInsets.only(
+                        left: size.width / 20, bottom: 18, top: 10),
                     child: Text(
                       'Music',
                       style: textTheme.headlineMedium,
@@ -310,7 +346,7 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(
-                          left: index == 0 ? 24 : 10, right: 10),
+                          left: index == 0 ? size.width / 20 : 10, right: 10),
                       child: Column(
                         children: [
                           Padding(
@@ -359,10 +395,10 @@ class HomeScreen extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsets.only(left: 24, bottom: 10, top: 10),
+                    padding: EdgeInsets.only(
+                        left: size.width / 20, bottom: 10, top: 10),
                     child: Text(
-                      'New albums',
+                      'Play Lists',
                       style: textTheme.headlineMedium,
                     ),
                   ),
@@ -377,21 +413,29 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(
-                        right: index == (index.bitLength - 2) ? 24 : 5,
-                        left: index == 0 ? 24 : 10,
+                        left: index == 0 ? size.width / 20 : 10,
                         top: 8,
+                        right: 5,
                         bottom: 5,
                       ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: AssetImage(Assets.images.imageRelease.path),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        width: size.width / 1.5,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const PlayList()));
+                        },
                         child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image:
+                                  AssetImage(Assets.images.imageRelease.path),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          width: size.width / 1.5,
+                          child: Container(
                             width: double.infinity,
                             height: double.infinity,
                             decoration: const BoxDecoration(
@@ -420,14 +464,16 @@ class HomeScreen extends StatelessWidget {
                                   )
                                 ],
                               ),
-                            )),
+                            ),
+                          ),
+                        ),
                       ),
                     );
                   },
                 ),
               ),
-              const SizedBox(
-                height: 16,
+              SizedBox(
+                height: size.height / 11,
               ),
             ],
           ),
