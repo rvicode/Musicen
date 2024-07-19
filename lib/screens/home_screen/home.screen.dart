@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          forceMaterialTransparency: true,
           toolbarHeight: size.height / 12,
           backgroundColor: ThemeColor.backgroundColor,
           actions: [
@@ -30,7 +31,9 @@ class HomeScreen extends StatelessWidget {
                         focusColor: Colors.transparent,
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
-                        onTap: () {},
+                        onTap: () {
+                          
+                        },
                         child: Padding(
                           padding: EdgeInsets.only(
                               top: size.height / 25, right: size.width / 25),

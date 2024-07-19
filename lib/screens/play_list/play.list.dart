@@ -19,6 +19,7 @@ class _PlayListState extends State<PlayList> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        forceMaterialTransparency: true,
         automaticallyImplyLeading: false,
         toolbarHeight: size.height / 12,
         backgroundColor: ThemeColor.backgroundColor,
