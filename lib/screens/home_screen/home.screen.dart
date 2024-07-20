@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:musicen/components/colors.dart';
 import 'package:musicen/gen/assets.gen.dart';
-import 'package:musicen/screens/play_list/play.list.dart';
+import 'package:musicen/screens/home_screen/widgets/all.release.dart';
+import 'package:musicen/screens/home_screen/widgets/category.dart';
+import 'package:musicen/screens/home_screen/widgets/paly.list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -65,114 +67,8 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              SizedBox(
-                width: double.infinity,
-                height: size.height / 10,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 3,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(
-                        left: index == 0 ? 15 : 5,
-                        top: 8,
-                        right: 5,
-                        bottom: 5,
-                      ),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const PlayList(),
-                            ),
-                          );
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                              image:
-                                  AssetImage(Assets.images.testCategory.path),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          width: size.width / 3.4,
-                          child: Container(
-                            width: double.infinity,
-                            height: double.infinity,
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                  colors: [
-                                    Color.fromARGB(150, 18, 18, 18),
-                                    Color.fromARGB(200, 18, 18, 18)
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter),
-                            ),
-                            child: Center(
-                              child: Text('Rap', style: textTheme.bodyMedium),
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-              SizedBox(
-                width: double.infinity,
-                height: size.height / 10,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 3,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(
-                        left: index == 0 ? 15 : 5,
-                        top: 8,
-                        right: 5,
-                        bottom: 5,
-                      ),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const PlayList()));
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      Assets.images.testCategory.path),
-                                  fit: BoxFit.cover)),
-                          width: size.width / 3.4,
-                          child: Container(
-                            width: double.infinity,
-                            height: double.infinity,
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                  colors: [
-                                    Color.fromARGB(150, 18, 18, 18),
-                                    Color.fromARGB(200, 18, 18, 18)
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter),
-                            ),
-                            child: Center(
-                              child: Text('Rap', style: textTheme.bodyMedium),
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
+              Category(size: size, textTheme: textTheme),
+              Category(size: size, textTheme: textTheme),
               Row(
                 children: [
                   Padding(
@@ -188,64 +84,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                height: size.height / 3.6,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(
-                          left: index == 0 ? size.width / 20 : 10, right: 10),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                            child: Container(
-                              height: size.height / 5.4,
-                              width: size.width / 2.7,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: AssetImage(Assets.images.mix.path),
-                                    fit: BoxFit.cover),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: size.height / 6,
-                            height: 70,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'El Dollop',
-                                  style: textTheme.bodyMedium!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                SizedBox(
-                                  height: size.height / 200,
-                                ),
-                                Text(
-                                  'Sonoro | All Things Comedy',
-                                  style: textTheme.bodySmall!
-                                      .apply(fontSizeFactor: 0.8),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
+              NewRelease(size: size, textTheme: textTheme),
               Row(
                 children: [
                   Padding(
@@ -258,78 +97,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                width: double.infinity,
-                height: size.height / 6,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(
-                        left: index == 0 ? size.width / 20 : 10,
-                        top: 8,
-                        right: 5,
-                        bottom: 5,
-                      ),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const PlayList()));
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                              image:
-                                  AssetImage(Assets.images.imageRelease.path),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          width: size.width / 1.5,
-                          child: Container(
-                              width: double.infinity,
-                              height: double.infinity,
-                              decoration: const BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Color.fromARGB(0, 0, 0, 0),
-                                    Color.fromARGB(200, 12, 12, 12),
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                ),
-                              ),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 20, bottom: 10),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Uncovered - Robin Schulz',
-                                      style: textTheme.bodyMedium,
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                    Text(
-                                      '18 singles (2017)',
-                                      style: textTheme.bodySmall,
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    )
-                                  ],
-                                ),
-                              )),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
+              NewPlayLists(size: size, textTheme: textTheme),
               const SizedBox(
                 height: 4,
               ),
@@ -345,64 +113,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                height: size.height / 3.6,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(
-                          left: index == 0 ? size.width / 20 : 10, right: 10),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                            child: Container(
-                              height: size.height / 5.4,
-                              width: size.width / 2.7,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: AssetImage(Assets.images.mix.path),
-                                    fit: BoxFit.cover),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: size.height / 6,
-                            height: 70,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'El Dollop',
-                                  style: textTheme.bodyMedium!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                SizedBox(
-                                  height: size.height / 200,
-                                ),
-                                Text(
-                                  'Sonoro | All Things Comedy',
-                                  style: textTheme.bodySmall!
-                                      .apply(fontSizeFactor: 0.8),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
+              Release(size: size, textTheme: textTheme),
               Row(
                 children: [
                   Padding(
@@ -415,78 +126,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                width: double.infinity,
-                height: size.height / 6,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(
-                        left: index == 0 ? size.width / 20 : 10,
-                        top: 8,
-                        right: 5,
-                        bottom: 5,
-                      ),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const PlayList()));
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                              image:
-                                  AssetImage(Assets.images.imageRelease.path),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          width: size.width / 1.5,
-                          child: Container(
-                            width: double.infinity,
-                            height: double.infinity,
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                  colors: [
-                                    Color.fromARGB(0, 0, 0, 0),
-                                    Color.fromARGB(200, 12, 12, 12)
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter),
-                            ),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 20, bottom: 10),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Uncovered - Robin Schulz',
-                                    style: textTheme.bodyMedium,
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  Text(
-                                    '18 singles (2017)',
-                                    style: textTheme.bodySmall,
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
+              PlayLists(size: size, textTheme: textTheme),
               SizedBox(
                 height: size.height / 11,
               ),
@@ -496,4 +136,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-}
+  }
