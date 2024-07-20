@@ -25,20 +25,28 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/category1.png
+  AssetGenImage get category1 =>
+      const AssetGenImage('assets/images/category1.png');
+
+  /// File path: assets/images/category2.png
+  AssetGenImage get category2 =>
+      const AssetGenImage('assets/images/category2.png');
+
+  /// File path: assets/images/category3.png
+  AssetGenImage get category3 =>
+      const AssetGenImage('assets/images/category3.png');
+
+  /// File path: assets/images/category4.png
+  AssetGenImage get category4 =>
+      const AssetGenImage('assets/images/category4.png');
+
   /// File path: assets/images/category_image_playlist.png
   AssetGenImage get categoryImagePlaylist =>
       const AssetGenImage('assets/images/category_image_playlist.png');
 
-  /// File path: assets/images/image_release.png
-  AssetGenImage get imageRelease =>
-      const AssetGenImage('assets/images/image_release.png');
-
-  /// File path: assets/images/image_release2.png
-  AssetGenImage get imageRelease2 =>
-      const AssetGenImage('assets/images/image_release2.png');
-
-  /// File path: assets/images/mix.png
-  AssetGenImage get mix => const AssetGenImage('assets/images/mix.png');
+  /// File path: assets/images/mix1.png
+  AssetGenImage get mix1 => const AssetGenImage('assets/images/mix1.png');
 
   /// File path: assets/images/mix2.png
   AssetGenImage get mix2 => const AssetGenImage('assets/images/mix2.png');
@@ -57,22 +65,19 @@ class $AssetsImagesGen {
   AssetGenImage get testCategory2 =>
       const AssetGenImage('assets/images/test_category2.png');
 
-  /// File path: assets/images/test_category3.png
-  AssetGenImage get testCategory3 =>
-      const AssetGenImage('assets/images/test_category3.png');
-
   /// List of all assets
   List<AssetGenImage> get values => [
+        category1,
+        category2,
+        category3,
+        category4,
         categoryImagePlaylist,
-        imageRelease,
-        imageRelease2,
-        mix,
+        mix1,
         mix2,
         mix3,
         profile,
         testCategory,
-        testCategory2,
-        testCategory3
+        testCategory2
       ];
 }
 
