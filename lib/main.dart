@@ -4,7 +4,9 @@ import 'package:musicen/gen/fonts.gen.dart';
 import 'package:musicen/screens/home_screen/home.screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
