@@ -1,10 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:musicen/components/colors.dart';
-import 'package:musicen/gen/assets.gen.dart';
 import 'package:musicen/screens/home_screen/widgets/all.release.dart';
 import 'package:musicen/screens/home_screen/widgets/category.dart';
 import 'package:musicen/screens/home_screen/widgets/paly.list.dart';
+import 'package:musicen/screens/widgets/drawer.main..dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,9 +14,27 @@ class HomeScreen extends StatelessWidget {
     var textTheme = Theme.of(context).textTheme;
     var size = MediaQuery.of(context).size;
 
+    var scaffoldKey = GlobalKey<ScaffoldState>();
+
     return SafeArea(
       child: Scaffold(
+        key: scaffoldKey,
+        drawer: DrawerMainScreen(size: size, textTheme: textTheme),
         appBar: AppBar(
+          leading: Padding(
+            padding:
+                EdgeInsets.only(left: size.width / 20, top: size.height / 45),
+            child: IconButton(
+              icon: Icon(
+                CupertinoIcons.line_horizontal_3,
+                color: Colors.white,
+                size: size.height / 30,
+              ),
+              onPressed: () {
+                return scaffoldKey.currentState!.openDrawer();
+              },
+            ),
+          ),
           forceMaterialTransparency: true,
           toolbarHeight: size.height / 12,
           backgroundColor: ThemeColor.backgroundColor,
@@ -26,23 +44,6 @@ class HomeScreen extends StatelessWidget {
               height: size.height,
               child: Stack(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      InkWell(
-                        focusColor: Colors.transparent,
-                        splashColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () {},
-                        child: Padding(
-                          padding: EdgeInsets.only(
-                              top: size.height / 25, right: size.width / 25),
-                          child: SvgPicture.asset(Assets.icons.setting,
-                              height: 30),
-                        ),
-                      ),
-                    ],
-                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -74,8 +75,8 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(
                       left: size.width / 20,
-                      bottom: 18,
-                      top: 10,
+                      bottom: size.height / 50,
+                      top: size.height / 80,
                     ),
                     child: Text(
                       'New Release',
@@ -89,7 +90,10 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        left: size.width / 20, bottom: 10, top: 10),
+                      left: size.width / 20,
+                      bottom: size.height / 50,
+                      top: size.height / 80,
+                    ),
                     child: Text(
                       'New Play Lists',
                       style: textTheme.headlineMedium,
@@ -105,7 +109,10 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        left: size.width / 20, bottom: 18, top: 10),
+                      left: size.width / 20,
+                      bottom: size.height / 50,
+                      top: size.height / 80,
+                    ),
                     child: Text(
                       'Music',
                       style: textTheme.headlineMedium,
@@ -118,7 +125,10 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        left: size.width / 20, bottom: 10, top: 10),
+                      left: size.width / 20,
+                      bottom: size.height / 50,
+                      top: size.height / 80,
+                    ),
                     child: Text(
                       'Play Lists',
                       style: textTheme.headlineMedium,
@@ -136,4 +146,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-  }
+}
