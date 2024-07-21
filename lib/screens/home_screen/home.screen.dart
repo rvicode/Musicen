@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:musicen/components/colors.dart';
 import 'package:musicen/screens/home_screen/widgets/all.release.dart';
 import 'package:musicen/screens/home_screen/widgets/category.dart';
-import 'package:musicen/screens/home_screen/widgets/paly.list.dart';
+import 'package:musicen/screens/home_screen/widgets/play.list.dart';
 import 'package:musicen/screens/widgets/drawer.main..dart';
 
 class HomeScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           leading: Padding(
             padding:
-                EdgeInsets.only(left: size.width / 20, top: size.height / 45),
+                EdgeInsets.only(left: size.width / 20, top: size.height / 50),
             child: IconButton(
               icon: Icon(
                 CupertinoIcons.line_horizontal_3,

@@ -32,24 +32,31 @@ class DrawerMainScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: size.width / 20, top: size.height / 30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Arvin Veisy',
-                      style: textTheme.bodyMedium!.apply(fontWeightDelta: 2),
-                    ),
-                    const SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      'arvinvisi03@gmail.com',
-                      style: textTheme.bodySmall,
-                    ),
-                  ],
+              SizedBox(
+                width: size.width / 2,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: size.width / 20, top: size.height / 30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Arvin Veisy',
+                        style: textTheme.bodyMedium!.apply(fontWeightDelta: 2),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Text(
+                        'arvinvisi03@gmail.com ',
+                        style: textTheme.bodySmall,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],
@@ -61,6 +68,9 @@ class DrawerMainScreen extends StatelessWidget {
             color: Colors.white24,
           ),
           InkWell(
+            focusColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onTap: () {},
             child: SizedBox(
               height: size.height / 20,
@@ -77,6 +87,9 @@ class DrawerMainScreen extends StatelessWidget {
             color: Colors.white24,
           ),
           InkWell(
+            focusColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onTap: () {},
             child: SizedBox(
               height: size.height / 20,
@@ -93,6 +106,9 @@ class DrawerMainScreen extends StatelessWidget {
             color: Colors.white24,
           ),
           InkWell(
+            focusColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onTap: () {},
             child: SizedBox(
               height: size.height / 20,
