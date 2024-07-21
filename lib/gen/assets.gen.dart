@@ -25,6 +25,18 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/categories1.png
+  AssetGenImage get categories1 =>
+      const AssetGenImage('assets/images/categories1.png');
+
+  /// File path: assets/images/categories2.png
+  AssetGenImage get categories2 =>
+      const AssetGenImage('assets/images/categories2.png');
+
+  /// File path: assets/images/categories3.png
+  AssetGenImage get categories3 =>
+      const AssetGenImage('assets/images/categories3.png');
+
   /// File path: assets/images/category1.png
   AssetGenImage get category1 =>
       const AssetGenImage('assets/images/category1.png');
@@ -57,9 +69,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
 
-  /// File path: assets/images/test_category.png
-  AssetGenImage get testCategory =>
-      const AssetGenImage('assets/images/test_category.png');
+  /// File path: assets/images/profile_pic.png
+  AssetGenImage get profilePic =>
+      const AssetGenImage('assets/images/profile_pic.png');
 
   /// File path: assets/images/test_category2.png
   AssetGenImage get testCategory2 =>
@@ -67,6 +79,9 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        categories1,
+        categories2,
+        categories3,
         category1,
         category2,
         category3,
@@ -76,7 +91,7 @@ class $AssetsImagesGen {
         mix2,
         mix3,
         profile,
-        testCategory,
+        profilePic,
         testCategory2
       ];
 }
