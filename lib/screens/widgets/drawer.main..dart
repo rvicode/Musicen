@@ -17,6 +17,8 @@ class DrawerMainScreen extends StatelessWidget {
     return Drawer(
       backgroundColor: ThemeColor.backgroundColor,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -67,15 +69,16 @@ class DrawerMainScreen extends StatelessWidget {
           const Divider(
             color: Colors.white24,
           ),
-          InkWell(
-            focusColor: Colors.transparent,
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () {},
-            child: SizedBox(
-              height: size.height / 20,
-              width: double.infinity,
-              child: Center(
+          Padding(
+            padding: const EdgeInsets.only(left: 32, top: 20),
+            child: InkWell(
+              focusColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () {},
+              child: SizedBox(
+                height: size.height / 20,
+                width: double.infinity,
                 child: Text(
                   'Edit profile',
                   style: textTheme.bodyMedium,
@@ -86,15 +89,16 @@ class DrawerMainScreen extends StatelessWidget {
           const Divider(
             color: Colors.white24,
           ),
-          InkWell(
-            focusColor: Colors.transparent,
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () {},
-            child: SizedBox(
-              height: size.height / 20,
-              width: double.infinity,
-              child: Center(
+          Padding(
+            padding: const EdgeInsets.only(left: 32, top: 20),
+            child: InkWell(
+              focusColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () {},
+              child: SizedBox(
+                height: size.height / 20,
+                width: double.infinity,
                 child: Text(
                   'Setting',
                   style: textTheme.bodyMedium,
@@ -105,15 +109,16 @@ class DrawerMainScreen extends StatelessWidget {
           const Divider(
             color: Colors.white24,
           ),
-          InkWell(
-            focusColor: Colors.transparent,
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () {},
-            child: SizedBox(
-              height: size.height / 20,
-              width: double.infinity,
-              child: Center(
+          Padding(
+            padding: const EdgeInsets.only(left: 32, top: 20),
+            child: InkWell(
+              focusColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () {},
+              child: SizedBox(
+                height: size.height / 20,
+                width: double.infinity,
                 child: Text(
                   'Log Out',
                   style: textTheme.bodyMedium,
