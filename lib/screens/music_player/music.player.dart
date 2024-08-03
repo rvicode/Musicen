@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:musicen/components/colors.dart';
 import 'package:musicen/gen/assets.gen.dart';
 
@@ -12,7 +15,28 @@ class MusicPlayer extends StatefulWidget {
 }
 
 class _MusicPlayerState extends State<MusicPlayer> {
-  bool isPlay = false;
+  final AudioPlayer audioPlayer = AudioPlayer();
+  Duration? duration;
+  Timer? timer;
+
+  @override
+  void initState() {
+    audioPlayer.setAsset('assets/music/havana.mp3').then(
+      (value) {
+        duration = value;
+        audioPlayer.play();
+        timer = Timer.periodic(
+          const Duration(milliseconds: 200),
+          (timer) {
+            setState(() {});
+          },
+        );
+        setState(() {});
+      },
+    );
+    super.initState();
+  }
+
   bool isRandomPlay = false;
   bool isRepeat = false;
   @override
@@ -95,7 +119,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
                     image: DecorationImage(
-                      image: AssetImage(Assets.images.mix1.path),
+                      image: AssetImage(Assets.images.havana.path),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -156,36 +180,45 @@ class _MusicPlayerState extends State<MusicPlayer> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: size.height / 25,
-                  bottom: 0,
-                  left: size.width / 10,
-                  right: size.width / 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '02:32',
-                    style: textTheme.bodySmall,
-                  ),
-                  Text(
-                    '03:43',
-                    style: textTheme.bodySmall,
-                  ),
-                ],
+            if (duration != null)
+              Padding(
+                padding: EdgeInsets.only(
+                    top: size.height / 25,
+                    bottom: 0,
+                    left: size.width / 10,
+                    right: size.width / 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      audioPlayer.position.toMinuesSeconds(),
+                      style: textTheme.bodySmall,
+                    ),
+                    Text(
+                      duration!.toMinuesSeconds(),
+                      style: textTheme.bodySmall,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: size.width / 25, right: size.width / 25),
-              child: Slider(
-                activeColor: TextThemeColor.mainTextColor,
-                max: 100,
-                value: 50,
-                onChanged: (value) {},
-              ),
-            ),
+            if (duration != null)
+              Padding(
+                  padding: EdgeInsets.only(
+                      left: size.width / 25, right: size.width / 25),
+                  child: Slider(
+                    activeColor: TextThemeColor.mainTextColor,
+                    max: duration!.inMilliseconds.toDouble(),
+                    value: audioPlayer.position.inMilliseconds.toDouble(),
+                    onChangeStart: (value) {
+                      audioPlayer.pause();
+                    },
+                    onChangeEnd: (value) {
+                      audioPlayer.play();
+                    },
+                    onChanged: (value) {
+                      audioPlayer.seek(Duration(milliseconds: value.toInt()));
+                    },
+                  )),
             Padding(
               padding: EdgeInsets.only(
                 top: size.height / 35,
@@ -250,7 +283,9 @@ class _MusicPlayerState extends State<MusicPlayer> {
                         onTap: () {
                           setState(
                             () {
-                              isPlay = !isPlay;
+                              audioPlayer.playing
+                                  ? audioPlayer.pause()
+                                  : audioPlayer.play();
                             },
                           );
                         },
@@ -259,7 +294,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
                           height: 70,
                           decoration: BoxDecoration(
                             boxShadow: [
-                              isPlay
+                              audioPlayer.playing
                                   ? BoxShadow(
                                       color: TextThemeColor.mainTextColor
                                           .withOpacity(0.5),
@@ -272,7 +307,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
                             color: TextThemeColor.mainTextColor,
                           ),
                           child: Center(
-                            child: isPlay
+                            child: audioPlayer.playing
                                 ? const Icon(
                                     CupertinoIcons.pause_fill,
                                     size: 30,
@@ -303,5 +338,33 @@ class _MusicPlayerState extends State<MusicPlayer> {
         ),
       ),
     );
+  }
+}
+
+extension DurationExtensions on Duration {
+  /// Converts the duration into readable string
+  /// 05:15
+  String toHoursMinutes() {
+    String twoDigitMinutes = _toTwoDigits(inMinutes.remainder(60));
+    return "${_toTwoDigits(inHours)}:$twoDigitMinutes";
+  }
+
+  /// Converts the duration into a readable string
+  /// 05:15:35
+  String toHoursMinutesSeconds() {
+    String twoDigitMinutes = _toTwoDigits(inMinutes.remainder(60));
+    String twoDigitSeconds = _toTwoDigits(inSeconds.remainder(60));
+    return "${_toTwoDigits(inHours)}:$twoDigitMinutes:$twoDigitSeconds";
+  }
+
+  String toMinuesSeconds() {
+    String twoDigitMinutes = _toTwoDigits(inMinutes.remainder(60));
+    String twoDigitSeconds = _toTwoDigits(inSeconds.remainder(60));
+    return "$twoDigitMinutes:$twoDigitSeconds";
+  }
+
+  String _toTwoDigits(int n) {
+    if (n >= 10) return "$n";
+    return "0$n";
   }
 }
