@@ -60,6 +60,9 @@ class $AssetsImagesGen {
   AssetGenImage get categoryImagePlaylist =>
       const AssetGenImage('assets/images/category_image_playlist.png');
 
+  /// File path: assets/images/havana.png
+  AssetGenImage get havana => const AssetGenImage('assets/images/havana.png');
+
   /// File path: assets/images/mix1.png
   AssetGenImage get mix1 => const AssetGenImage('assets/images/mix1.png');
 
@@ -90,6 +93,7 @@ class $AssetsImagesGen {
         category3,
         category4,
         categoryImagePlaylist,
+        havana,
         mix1,
         mix2,
         mix3,
@@ -99,11 +103,22 @@ class $AssetsImagesGen {
       ];
 }
 
+class $AssetsMusicGen {
+  const $AssetsMusicGen();
+
+  /// File path: assets/music/havana.mp3
+  String get havana => 'assets/music/havana.mp3';
+
+  /// List of all assets
+  List<String> get values => [havana];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsMusicGen music = $AssetsMusicGen();
 }
 
 class AssetGenImage {
