@@ -15,14 +15,23 @@ class $AssetsIconsGen {
   /// File path: assets/icons/check_lyrics.svg
   String get checkLyrics => 'assets/icons/check_lyrics.svg';
 
+  /// File path: assets/icons/home.svg
+  String get home => 'assets/icons/home.svg';
+
+  /// File path: assets/icons/lib.svg
+  String get lib => 'assets/icons/lib.svg';
+
   /// File path: assets/icons/random.svg
   String get random => 'assets/icons/random.svg';
+
+  /// File path: assets/icons/search.svg
+  String get search => 'assets/icons/search.svg';
 
   /// File path: assets/icons/setting.svg
   String get setting => 'assets/icons/setting.svg';
 
   /// List of all assets
-  List<String> get values => [checkLyrics, random, setting];
+  List<String> get values => [checkLyrics, home, lib, random, search, setting];
 }
 
 class $AssetsImagesGen {

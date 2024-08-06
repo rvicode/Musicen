@@ -27,9 +27,11 @@ class NewRelease extends StatelessWidget {
                 left: index == 0 ? size.width / 20 : 10,
                 right: releaseMusic.length - 1 == index ? 20 : 10),
             child: InkWell(
-              onTap: (){
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const MusicPlayer()));
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MusicPlayer()));
               },
               child: Column(
                 children: [
@@ -65,7 +67,8 @@ class NewRelease extends StatelessWidget {
                         ),
                         Text(
                           releaseMusic[index].category,
-                          style: textTheme.bodySmall!.apply(fontSizeFactor: 0.8),
+                          style:
+                              textTheme.bodySmall!.apply(fontSizeFactor: 0.8),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         )
@@ -100,16 +103,20 @@ class Release extends StatelessWidget {
       width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount:releaseMusic.length,
+        itemCount: releaseMusic.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(
                 left: index == 0 ? size.width / 20 : 10,
                 right: releaseMusic.length - 1 == index ? 20 : 10),
             child: InkWell(
-              onTap: (){
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const MusicPlayer()));
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MusicPlayer(),
+                  ),
+                );
               },
               child: Column(
                 children: [
@@ -144,8 +151,9 @@ class Release extends StatelessWidget {
                           height: size.height / 200,
                         ),
                         Text(
-                         releaseMusic[index].category,
-                          style: textTheme.bodySmall!.apply(fontSizeFactor: 0.8),
+                          releaseMusic[index].category,
+                          style:
+                              textTheme.bodySmall!.apply(fontSizeFactor: 0.8),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         )
