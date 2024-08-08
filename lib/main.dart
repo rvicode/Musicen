@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:musicen/components/colors.dart';
 import 'package:musicen/gen/fonts.gen.dart';
 import 'package:musicen/screens/home_screen/home.screen.dart';
-import 'package:musicen/screens/play_list/play.list.screen.dart';
+import 'package:musicen/screens/search_screen/search.screen.dart';
 import 'package:musicen/screens/widgets/bottom.navigation.dart';
 
 void main() {
@@ -117,9 +117,9 @@ class _MainScreenState extends State<MainScreen> {
                 child: IndexedStack(
                   index: selectedScreenIndex,
                   children: [
-                    _navigator(_homeKey, homeIndex, HomeScreen()),
-                    _navigator(_searchKey, searchIndex, PlayList()),
-                    _navigator(_libKey, libIndex, Placeholder()),
+                    _navigator(_homeKey, homeIndex, const HomeScreen()),
+                    _navigator(_searchKey, searchIndex, const SearchScreen()),
+                    _navigator(_libKey, libIndex, const Placeholder()),
                   ],
                 ),
               ),
