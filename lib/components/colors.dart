@@ -7,3 +7,7 @@ class ThemeColor {
 class TextThemeColor {
   static const Color mainTextColor = Color(0xff00C2CB);
 }
+
+class RandomColor {
+  List randomColor = [Colors.red, Colors.blue, Colors.green, Colors.yellow];
+}
