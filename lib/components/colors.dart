@@ -9,5 +9,34 @@ class TextThemeColor {
 }
 
 class RandomColor {
-  List randomColor = [Colors.red, Colors.blue, Colors.green, Colors.yellow];
+  List randomColor = [
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+  ];
 }
