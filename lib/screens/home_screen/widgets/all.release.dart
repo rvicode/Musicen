@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:musicen/fake_data/fake.data.dart';
-import 'package:musicen/screens/music_player/music.player.dart';
+import 'package:musicen/screens/music_player_screen/music.player.screen.dart';
 
 class NewRelease extends StatelessWidget {
   const NewRelease({

@@ -20,7 +20,7 @@ class CategoryGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: size.width,
-      height: size.height / 1.36,
+      height: size.height / 1.4,
       child: GridView.count(
         crossAxisCount: 2,
         childAspectRatio: 1.7,

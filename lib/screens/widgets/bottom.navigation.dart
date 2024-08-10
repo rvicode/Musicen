@@ -7,12 +7,12 @@ class BottomNavigation extends StatelessWidget {
   final Function(int index) onTap;
   final int selectedIndex;
   
-  final double bottomNavigationHeight = 65;
   const BottomNavigation(
       {super.key, required this.onTap, required this.selectedIndex});
 
   @override
   Widget build(BuildContext context) {
+  final double bottomNavigationHeight = MediaQuery.of(context).size.height/13;
     return Container(
       width: double.infinity,
       height: bottomNavigationHeight,

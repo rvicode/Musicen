@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:musicen/fake_data/fake.data.dart';
-import 'package:musicen/screens/play_list/play.list.screen.dart';
+import 'package:musicen/screens/play_list_screen/play.list.screen.dart';
 
 class Category extends StatelessWidget {
   const Category({
