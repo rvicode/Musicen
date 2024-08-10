@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:musicen/components/colors.dart';
 import 'package:musicen/gen/fonts.gen.dart';
-import 'package:musicen/screens/home_screen/home.screen.dart';
-import 'package:musicen/screens/library_screen/library.screen.dart';
-import 'package:musicen/screens/search_screen/search.screen.dart';
 import 'package:musicen/screens/splash_screen/splash.screen.dart';
-import 'package:musicen/screens/widgets/bottom.navigation.dart';
 
 void main() {
   runApp(
