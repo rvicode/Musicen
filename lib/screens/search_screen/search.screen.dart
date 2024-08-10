@@ -25,7 +25,8 @@ class SearchScreen extends StatelessWidget {
                 ),
               ),
             ],
-          ),),
+          ),
+        ),
         backgroundColor: ThemeColor.backgroundColor,
         body: GestureDetector(
           onTap: () {
@@ -69,7 +70,7 @@ class SearchScreen extends StatelessWidget {
               ),
               SizedBox(
                 width: size.width,
-                height: size.height / 1.35,
+                height: size.height / 1.36,
                 child: GridView.count(
                   crossAxisCount: 2,
                   childAspectRatio: 1.7,
