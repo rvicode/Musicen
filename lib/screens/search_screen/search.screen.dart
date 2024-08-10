@@ -12,27 +12,29 @@ class SearchScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final textTheme = Theme.of(context).textTheme;
     return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: ThemeColor.backgroundColor,
-          title: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 16, left: 16),
-                child: Text(
-                  'Search',
-                  style: textTheme.headlineLarge!.apply(fontSizeFactor: 0.8),
+      child: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: Scaffold(
+          appBar: AppBar(
+            forceMaterialTransparency: true,
+            toolbarHeight: size.height / 12,
+            backgroundColor: ThemeColor.backgroundColor,
+            title: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 16, left: 16),
+                  child: Text(
+                    'Search',
+                    style: textTheme.headlineLarge!.apply(fontSizeFactor: 0.8),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        backgroundColor: ThemeColor.backgroundColor,
-        body: GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
-          },
-          child: Column(
+          backgroundColor: ThemeColor.backgroundColor,
+          body: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(16),

@@ -25,6 +25,9 @@ class _LibScreenState extends State<LibScreen> {
       child: Scaffold(
         backgroundColor: ThemeColor.backgroundColor,
         appBar: AppBar(
+          
+          forceMaterialTransparency: true,
+          toolbarHeight: size.height / 12,
           backgroundColor: ThemeColor.backgroundColor,
           title: Row(
             children: [
