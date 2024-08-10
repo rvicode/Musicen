@@ -13,6 +13,19 @@ class SearchScreen extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: ThemeColor.backgroundColor,
+          title: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 16, left: 16),
+                child: Text(
+                  'Search',
+                  style: textTheme.headlineLarge!.apply(fontSizeFactor: 0.8),
+                ),
+              ),
+            ],
+          ),),
         backgroundColor: ThemeColor.backgroundColor,
         body: GestureDetector(
           onTap: () {
@@ -20,20 +33,6 @@ class SearchScreen extends StatelessWidget {
           },
           child: Column(
             children: [
-              Row(
-                children: [
-                  SizedBox(
-                    width: size.width / 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16),
-                    child: Text(
-                      'Search',
-                      style: textTheme.bodyLarge,
-                    ),
-                  ),
-                ],
-              ),
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Container(
