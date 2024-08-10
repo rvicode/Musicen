@@ -14,7 +14,7 @@ class NewPlayLists extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final playlist = AppDatabase.playlistyDataData;
+    final playlist = AppDatabase.playlistyData;
     return SizedBox(
       width: double.infinity,
       height: size.height / 6,
@@ -99,7 +99,7 @@ class PlayLists extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final playlist = AppDatabase.playlistyDataData;
+    final playlist = AppDatabase.playlistyData;
     return SizedBox(
       width: double.infinity,
       height: size.height / 6,
