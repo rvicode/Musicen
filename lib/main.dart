@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:musicen/components/colors.dart';
 import 'package:musicen/gen/fonts.gen.dart';
 import 'package:musicen/screens/home_screen/home.screen.dart';
+import 'package:musicen/screens/library_screen/library.screen.dart';
 import 'package:musicen/screens/search_screen/search.screen.dart';
 import 'package:musicen/screens/widgets/bottom.navigation.dart';
 
@@ -119,7 +120,7 @@ class _MainScreenState extends State<MainScreen> {
                   children: [
                     _navigator(_homeKey, homeIndex, const HomeScreen()),
                     _navigator(_searchKey, searchIndex, const SearchScreen()),
-                    _navigator(_libKey, libIndex, const Placeholder()),
+                    _navigator(_libKey, libIndex, const LibScreen()),
                   ],
                 ),
               ),
