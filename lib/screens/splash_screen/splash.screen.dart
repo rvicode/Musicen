@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:musicen/main.dart';
+import 'package:musicen/screens/main_screen/main.screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

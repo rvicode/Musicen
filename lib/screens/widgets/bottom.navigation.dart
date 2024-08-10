@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:musicen/components/colors.dart';
-import 'package:musicen/main.dart';
+import 'package:musicen/screens/main_screen/main.screen.dart';
 
 class BottomNavigation extends StatelessWidget {
   final Function(int index) onTap;
