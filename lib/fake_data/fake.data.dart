@@ -31,7 +31,22 @@ class PlayListyData {
   });
 }
 
+class CategoryList {
+  final String name;
+  CategoryList({required this.name});
+}
+
 class AppDatabase {
+  static List<CategoryList> get categoryList {
+    return [
+      CategoryList(name: 'Playlists'),
+      CategoryList(name: 'Folders'),
+      CategoryList(name: 'Artists '),
+      CategoryList(name: 'Albums'),
+      CategoryList(name: 'Podcasts'),
+    ];
+  }
+
   static List<ReleaseData> get releaseData {
     return [
       ReleaseData(
@@ -52,10 +67,59 @@ class AppDatabase {
         image: 'assets/images/mix3.png',
         music: 'null',
       ),
+      ReleaseData(
+        name: 'El Dollop',
+        category: 'Sonoro | All Things Comedy',
+        image: 'assets/images/mix1.png',
+        music: 'null',
+      ),
+      ReleaseData(
+        name: 'Caso 63',
+        category: 'Spotify Studios',
+        image: 'assets/images/mix2.png',
+        music: 'null',
+      ),
+      ReleaseData(
+        name: 'TED en Español',
+        category: 'TED',
+        image: 'assets/images/mix3.png',
+        music: 'null',
+      ),
+      ReleaseData(
+        name: 'El Dollop',
+        category: 'Sonoro | All Things Comedy',
+        image: 'assets/images/mix1.png',
+        music: 'null',
+      ),
+      ReleaseData(
+        name: 'Caso 63',
+        category: 'Spotify Studios',
+        image: 'assets/images/mix2.png',
+        music: 'null',
+      ),
+      ReleaseData(
+        name: 'TED en Español',
+        category: 'TED',
+        image: 'assets/images/mix3.png',
+        music: 'null',
+      ),
+      ReleaseData(
+        name: 'El Dollop',
+        category: 'Sonoro | All Things Comedy',
+        image: 'assets/images/mix1.png',
+        music: 'null',
+      ),
+      ReleaseData(
+        name: 'Caso 63',
+        category: 'Spotify Studios',
+        image: 'assets/images/mix2.png',
+        music: 'null',
+      ),
+
     ];
   }
 
-  static List<PlayListyData> get playlistyDataData {
+  static List<PlayListyData> get playlistyData {
     return [
       PlayListyData(
           name: 'Uncovered - Robin Schulz',
